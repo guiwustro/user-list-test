@@ -1,14 +1,14 @@
 import UserList from "./components/UserList";
 import UsersProvider from "./contexts/userContext";
+import RoutesMain from "./routes";
 
 function App() {
 	return (
-		<div className="App">
+		<>
 			<UsersProvider>
-				<h1>Users list</h1>
-				<UserList />
+				<RoutesMain />
 			</UsersProvider>
-		</div>
+		</>
 	);
 }
 
