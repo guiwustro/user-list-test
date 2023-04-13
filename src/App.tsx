@@ -1,12 +1,13 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import UserList from "./components/UserList";
+import UsersProvider from "./contexts/userContext";
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
 		<div className="App">
-			<h1>Users list</h1>
+			<UsersProvider>
+				<h1>Users list</h1>
+				<UserList />
+			</UsersProvider>
 		</div>
 	);
 }
