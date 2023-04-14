@@ -9,7 +9,7 @@ export const Container = styled.li`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-
+	padding: 15px;
 	& > img {
 		border-radius: 50%;
 	}

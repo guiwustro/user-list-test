@@ -1,12 +1,13 @@
-import UserList from "../../components/UserList/UserList";
+import UserList from "../../components/UserList";
 import UserModal from "../../components/UserModal";
 import { useModalContext } from "../../contexts/ModalContext";
+import { ThemeTitle } from "../../styles/typography";
 
 const Home = () => {
 	const { modalConfig } = useModalContext();
 	return (
 		<div>
-			<h1>List</h1>
+			<ThemeTitle>Lista de usuários</ThemeTitle>
 			<UserList />
 			{modalConfig.isModalOpen && <UserModal />}
 		</div>

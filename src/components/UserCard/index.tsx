@@ -15,7 +15,6 @@ const UserCard = ({ user }: IUserCard) => {
 			<img src={user.picture.medium} alt={fullName} />
 			<ThemeSubtitleBig>{fullName}</ThemeSubtitleBig>
 			<ThemeSubtitleSmall>{user.email}</ThemeSubtitleSmall>
-			<p>{user.phone}</p>
 			<Button title="Ver mais informações" onClick={() => openModal(user)} />
 		</Container>
 	);
