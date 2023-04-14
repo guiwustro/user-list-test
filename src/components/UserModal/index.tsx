@@ -1,6 +1,9 @@
-import WomanLoginImage from "../../assets/sign-in-image.svg";
-
+import { useEffect, useRef } from "react";
+import FemaleIcon from "../../assets/female.png";
+import MaleIcon from "../../assets/male.png";
 import { useModalContext } from "../../contexts/ModalContext";
+import { ThemeLabel, ThemeTitle } from "../../styles/typography";
+import InfoLabel from "../InfoLabel";
 import {
 	Container,
 	ContainerRow,
@@ -8,11 +11,6 @@ import {
 	ModalContainer,
 	RightSide,
 } from "./styles";
-import MaleIcon from "../../assets/male.png";
-import FemaleIcon from "../../assets/female.png";
-import { ThemeLabel, ThemeTitle } from "../../styles/typography";
-import InfoLabel from "../InfoLabel";
-import { useEffect, useRef } from "react";
 const UserModal = () => {
 	const { openModal, closeModal, modalConfig } = useModalContext();
 	const actualUser = modalConfig.actualUser!;

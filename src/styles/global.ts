@@ -17,13 +17,6 @@ export default createGlobalStyle`
     width: 100vw;
     height: 100vh;
     background: ${(props) => props.theme.colors.body};
-    margin: 0 20px;
-    overflow-x: hidden;
-    /* overflow-y: scroll; */
-    @media screen and (min-width: 768px){
-      /* margin: 0 auto; */
-      
-    }
 
   }
 

@@ -15,9 +15,11 @@ export const Container = styled.div`
 export const ModalContainer = styled.div`
 	width: 80%;
 	background-color: white;
+	max-width: 880px;
 	border-radius: 10px;
 	position: relative;
-
+	max-height: 600px;
+	overflow: auto;
 	.modal__close-button {
 		top: 10px;
 		position: absolute;
@@ -59,8 +61,8 @@ export const LeftSide = styled.div`
 	}
 	.image__person {
 		@media screen and (min-width: 1024px) {
-			width: 224px;
-			height: 224px;
+			width: 124px;
+			height: 124px;
 		}
 
 		width: 100px;
