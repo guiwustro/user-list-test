@@ -16,6 +16,8 @@ declare module "styled-components" {
 			body: string;
 			darkBlue: string;
 			grey100: string;
+			purple300: string;
+			purple200: string;
 		};
 	}
 }

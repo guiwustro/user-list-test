@@ -4,7 +4,7 @@ import UserCard from "../UserCard";
 import { Container } from "./styles";
 
 const UserList = () => {
-	const { users, setCurrentPage } = useUsersContext();
+	const { users, setCurrentPage, filteredUsers } = useUsersContext();
 	const ref = useRef<any>();
 	useEffect(() => {
 		const intersectionObserver = new IntersectionObserver((entries) => {
@@ -17,9 +17,11 @@ const UserList = () => {
 	}, []);
 	return (
 		<Container>
-			{users.map((user, index) => (
-				<UserCard key={index} user={user} />
-			))}
+			{filteredUsers.length !== 0
+				? filteredUsers.map((user, index) => (
+						<UserCard key={index} user={user} />
+				  ))
+				: users.map((user, index) => <UserCard key={index} user={user} />)}
 			<li ref={ref}></li>
 		</Container>
 	);

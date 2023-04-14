@@ -4,9 +4,17 @@ export const ThemeTitle = styled.h1`
 	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 700;
-	font-size: 3.125rem;
-	line-height: 75px;
+	font-size: 2.125rem;
+	/* line-height: 75px; */
+	text-align: center;
+
 	color: ${(props) => props.theme.colors.darkBlue};
+	@media (min-width: 768px) {
+		font-size: 3.125rem;
+		/* padding: 0 20px; */
+
+		line-height: 75px;
+	}
 	text-transform: uppercase;
 `;
 
@@ -40,8 +48,12 @@ export const ThemeLabel = styled.p`
 	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 700;
-	font-size: 1.275rem;
-	line-height: 45px;
+	font-size: 1rem;
+
+	@media (min-width: 768px) {
+		font-size: 1.275rem;
+		line-height: 45px;
+	}
 	color: ${(props) => props.theme.colors.darkBlue};
 `;
 
@@ -49,8 +61,10 @@ export const ThemeInfo = styled.p`
 	font-family: "Poppins";
 	font-style: normal;
 	font-weight: 500;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	line-height: 28px;
-
+	@media (min-width: 768px) {
+		font-size: 1rem;
+	}
 	color: ${(props) => props.theme.colors.grey100};
 `;
