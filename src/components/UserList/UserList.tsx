@@ -1,7 +1,7 @@
 "use client";
 
-import { useUsersContext } from "../contexts/userContext";
-import UserCard from "./UserCard";
+import { useUsersContext } from "../../contexts/userContext";
+import UserCard from "../UserCard/UserCard";
 
 const UserList = () => {
 	const { users } = useUsersContext();
