@@ -9,6 +9,7 @@ import {
 
 interface IUsersProvider {
 	users: IUser[];
+	setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
 interface IUsersProps {
@@ -19,15 +20,17 @@ export const UsersContext = createContext({} as IUsersProvider);
 
 const UsersProvider = ({ children }: IUsersProps) => {
 	const [users, setUsers] = useState<IUser[]>([]);
+	const [currentPage, setCurrentPage] = useState(1);
 	useEffect(() => {
-		api.get("/?results=20").then((res) => {
-			setUsers(res.data.results);
-			console.log(users);
+		api.get(`/?page=${currentPage}&results=20&seed=abc`).then((res) => {
+			setUsers((prev) => [...prev, ...res.data.results]);
 		});
-	}, []);
+	}, [currentPage]);
 
 	return (
-		<UsersContext.Provider value={{ users }}>{children}</UsersContext.Provider>
+		<UsersContext.Provider value={{ users, setCurrentPage }}>
+			{children}
+		</UsersContext.Provider>
 	);
 };
 
