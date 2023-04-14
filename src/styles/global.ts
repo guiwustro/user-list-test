@@ -8,6 +8,7 @@ export default createGlobalStyle`
     outline:0;
     box-sizing: border-box;
 
+
   }
 
   body, #root {
@@ -16,8 +17,14 @@ export default createGlobalStyle`
     width: 100vw;
     height: 100vh;
     background: ${(props) => props.theme.colors.body};
-    max-width: 1440px;
-    margin: 0 auto;
+    margin: 0 20px;
+    overflow-x: hidden;
+    /* overflow-y: scroll; */
+    @media screen and (min-width: 768px){
+      /* margin: 0 auto; */
+      
+    }
+
   }
 
   button {
@@ -29,9 +36,9 @@ export default createGlobalStyle`
     border: 0;
   }
   /* width */
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 10px;
-  }
+  } */
   /* Track */
   ::-webkit-scrollbar-track {
     margin: 1rem;

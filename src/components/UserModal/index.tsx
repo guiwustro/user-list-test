@@ -12,6 +12,7 @@ import MaleIcon from "../../assets/male.png";
 import FemaleIcon from "../../assets/female.png";
 import { ThemeLabel, ThemeTitle } from "../../styles/typography";
 import InfoLabel from "../InfoLabel";
+import { useEffect, useRef } from "react";
 const UserModal = () => {
 	const { openModal, closeModal, modalConfig } = useModalContext();
 	const actualUser = modalConfig.actualUser!;
@@ -26,9 +27,26 @@ const UserModal = () => {
 	const month = date[1];
 	const day = date[2];
 	const formattedDate = `${day}/${month}/${year}`;
+
+	const modalRef = useRef<HTMLHeadingElement>(null);
+	useEffect(() => {
+		function handleOutClick(event: any) {
+			const value = modalRef?.current;
+
+			if (value && !value.contains(event.target)) {
+				closeModal();
+			}
+		}
+		document.addEventListener("mousedown", handleOutClick);
+
+		return () => {
+			document.removeEventListener("mousedown", handleOutClick);
+		};
+	}, []);
+
 	return (
 		<Container>
-			<ModalContainer>
+			<ModalContainer ref={modalRef}>
 				<div className="modal__body">
 					<button className="modal__close-button" onClick={() => closeModal()}>
 						X
