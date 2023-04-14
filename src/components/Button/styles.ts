@@ -19,6 +19,7 @@ export const ButtonStyle = styled.button<IButtonStyleProps>`
 		props.filterType &&
 		css`
 			background-color: ${(props) => props.theme.colors.purple300};
+			width: auto;
 			:hover {
 				background-color: ${(props) => props.theme.colors.purple200};
 			}
